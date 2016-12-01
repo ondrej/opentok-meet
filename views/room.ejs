@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
         <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/<%=chromeExtensionId%>">
         <link rel="icon" sizes="128x128" href="icon.png">
-        <title>OpenTok Meet : <%=room%></title>
+        <title>FOCUS Connect: <%=room%></title>
         <link href='//fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
         <script src="//static.opentok.com/v2/js/opentok.js"></script>
@@ -43,7 +43,7 @@
                 <ot-editor ng-show="showEditor"
                     ng-if="connected"
                     mode="javascript"
-                    value="// Write code here"
+                    value="Add links, text, and messages to send to other participants..."
                     modes="[{name: 'Javascript', value: 'javascript'}, {name: 'Markdown', value: 'markdown'}]"
                     class="OT_big">
                 </ot-editor>
@@ -67,40 +67,40 @@
         <div id="shareInfo"
             ng-if="connected && connections.length < 2 && !reconnecting"
             ng-cloak>
-            <p>Waiting for someone to join: <a href="{{shareURL}}">{{shareURL}}</a></p>
+            <p>Waiting for someone to join...</p>
         </div>
         <reconnecting-overlay id="reconnectingOverlay"
             ng-if="reconnecting"
             ng-cloak>
         </reconnecting-overlay>
         <div id="bottomBar">
-            <button name="screenshare" id="showscreen" ng-click="toggleShareScreen()" ng-class="{green: !sharingMyScreen, red: sharingMyScreen}" class="screen-btn icon-left ion-monitor" ng-disabled="!screenShareSupported || selectingScreenSource || promptToInstall" ng-if="!isAndroid" title="Share Screen"></button>
+            <!--<button name="screenshare" id="showscreen" ng-click="toggleShareScreen()" ng-class="{green: !sharingMyScreen, red: sharingMyScreen}" class="screen-btn icon-left ion-monitor" ng-disabled="!screenShareSupported || selectingScreenSource || promptToInstall" ng-if="!isAndroid" title="Share Screen"></button>-->
 
-            <span class="unread-indicator" ng-class="{unread: whiteboardUnread}">
+            <!--<span class="unread-indicator" ng-class="{unread: whiteboardUnread}">
                 <button name="whiteboard" id="showWhiteboardBtn" ng-click="toggleWhiteboard()" ng-class="{green: !showWhiteboard, red: showWhiteboard}" class="whiteboard-btn icon-left ion-edit" title="Collaborative Whiteboard"></button>
                 <span class="indicator"></span>
-            </span>
+            </span>-->
 
             <span class="unread-indicator" ng-class="{unread: editorUnread}">
                 <button name="editor" id="showEditorBtn" ng-click="toggleEditor()" ng-class="{green: !showEditor, red: showEditor}" class="editor-btn icon-left ion-document-text" title="Collaborative Editor"></button>
                 <span class="indicator"></span>
             </span>
 
-            <button type="button" name="archive" id="startArchiveBtn"
+            <!--<button type="button" name="archive" id="startArchiveBtn"
                 ng-if="!p2p && connected" ng-class="{green: !archiving, red: archiving}" class="icon-left ion-ios7-recording"
-                ng-click="toggleArchiving()" title="Record"></button>
+                ng-click="toggleArchiving()" title="Record"></button>-->
 
             <span id="publishUI">
                 <button name="publish" id="publishBtn" ng-click="togglePublish(true)" ng-class="{green: !publishing, red: publishing}" class="publish-btn icon-left ion ion-ios7-videocam" title="WebCam"><span ng-if="!publishing">HD</span></button>
                 <button name="publishSD" id="publishSDBtn" ng-if="!publishing" ng-click="togglePublish(false)" class="publish-btn green icon-left ion ion-ios7-videocam" title="WebCam"><span ng-if="!publishing">SD</span></button>
               </span>
             </span>
-            <button name="changeRoom" id="changeRoom" ng-click="changeRoom()" class="icon-left ion-log-out red" title="Leave"></button>
+            <!--<button name="changeRoom" id="changeRoom" ng-click="changeRoom()" class="icon-left ion-log-out red" title="Leave"></button>-->
         </div>
-        <div id="footer">
+        <!--<div id="footer">
             <a href="https://github.com/aullman/opentok-meet" target="_blank"><i class="ion-social-github" title="View source on GitHub"></i></a>
             <a href="https://github.com/aullman/opentok-meet/issues/new" target="_blank"><i class="ion-bug" title="Report Issue"></i></a>
-        </div>
+        </div>-->
         <i id="connCount" class="ion-ios7-people" title="{{connections.length}} participant in the room"> {{connections.length}}</i>
         <div id="statusMessages">
             <div id="archiveStatus" class="statusMessage" ng-if="archiveId">

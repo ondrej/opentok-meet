@@ -60,7 +60,7 @@ if (process.env.HEROKU || !useSSL) {
     console.log('Listening on ' + config.port);
   });
 } else {
-  https.createServer({
+  http.createServer({
     key: fs.readFileSync('./server.key', 'utf8'),
     cert: fs.readFileSync('./server.crt', 'utf8')
   }, app).listen(config.port, function() {

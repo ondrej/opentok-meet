@@ -20,7 +20,7 @@ module.exports = {
     },
     plugins: [
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin(),
+      //new webpack.optimize.UglifyJsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
           filename: "commons.min.js",
           name: "commons"
